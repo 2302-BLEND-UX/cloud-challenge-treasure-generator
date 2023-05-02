@@ -28,7 +28,19 @@ img {
 }
 
 #treasure-message {
-  text-align: center;
   font-size: 25px;
   color: #7d7d00;
+}
+
+#rolls-message {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.align-center {
+  text-align: center;
 }

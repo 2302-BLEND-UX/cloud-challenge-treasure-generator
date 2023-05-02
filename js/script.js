@@ -34,13 +34,33 @@ greetingDiv.innerHTML = greetPet(petName);
 
 // ---Random number generator---
 const treasureMessage = document.getElementById("treasure-message");
-let treasureRoll = Math.floor(Math.random() * 100);
+const generateButton = document.getElementById("generate");
+const rollsMessage = document.getElementById("rolls-message");
+// three rolls allowed
+let rolls = 3;
+// display rolls on screen
+rollsMessage.innerHTML = `Rolls remaining: ${rolls}`
+
+generateButton.addEventListener("click", function () {
+    // check if rolls remain
+    if (rolls === 0) {
+        treasureMessage.innerHTML = `No more rolls 😭`
+        return;
+    };
+    // if any rolls do remain, minus one from rolls
+    rolls--;
+    // update rolls
+    rollsMessage.innerHTML = `Rolls remaining: ${rolls}`
+    // then generate our treasure message
+    treasureMessage.innerHTML = openTreasure();
+})
 
 function openTreasure() {
-    console.log(treasureRoll);
+    let treasureRoll = Math.floor(Math.random() * 100);
+
     // 70% chance of getting 5 gold
     if (treasureRoll >= 0 && treasureRoll <= 69) {
-        return `You recieved 5 gold! Nice.`
+        return `You recieved ${treasureRoll * 10} gold! Nice.`
     }
     // 20% chance of getting suit of armour
     if (treasureRoll >= 70 && treasureRoll <= 90) {
@@ -50,7 +70,7 @@ function openTreasure() {
     return `You recieved a rare relic! Holy moley!`
 }
 
-treasureMessage.innerHTML = openTreasure();
+
 
 
 
