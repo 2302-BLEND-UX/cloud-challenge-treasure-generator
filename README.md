@@ -5,4 +5,4 @@
 
 - It also covered how we can make our code "clean" by returning data from functions
 
-- Using returns within functions stops the function and returns some data - which means we don't need to use an else statement afterwards
+- Using returns within if statements means we don't need to use an else statement afterwards, which makes our code more readable too
